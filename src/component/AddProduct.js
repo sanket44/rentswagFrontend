@@ -17,12 +17,7 @@ constructor(props){
     this.saveProduct = this.saveProduct.bind(this);
 }
 
-    // componentDidMount({
-          
-        
-         
 
-    // })
 
     saveProduct = (e) => {
         e.preventDefault();
