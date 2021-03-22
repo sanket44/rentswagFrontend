@@ -18,7 +18,7 @@ class Home extends Component {
     }
     componentDidMount() {
   
-        axios.get(`/getallproduct`).then(
+        axios.get("https://rentswag.herokuapp.com/users/getallproduct").then(
             res =>{
                 this.setState({
                         products:res.data 
