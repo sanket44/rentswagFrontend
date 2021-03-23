@@ -6,16 +6,13 @@ import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
 import DropdownToggle from "react-bootstrap/esm/DropdownToggle";
 
-
 import {  Link } from "react-router-dom";
 
 
 
 class Nav extends Component {
 
-  componentDidUpdate(){
 
-  }
      
     constructor(props) {
         super(props);
@@ -24,8 +21,6 @@ class Nav extends Component {
           products: [],
           cartItems:[],
           isloggedin:localStorage.getItem("token") ? true : false
-
-          // isloggedin:localStorage.getItem("userinfo") ? true : false
           
         };
         this.routerRef = React.createRef();
@@ -59,7 +54,7 @@ class Nav extends Component {
             <div>
                     <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
                         <div className="container-fluid">
-                            <Link to="/" className="navbar-brand"><img src="https://see.fontimg.com/api/renderfont4/5Y58/eyJyIjoiZnMiLCJoIjo4MSwidyI6MTI1MCwiZnMiOjY1LCJmZ2MiOiIjRUFFQUVBIiwiYmdjIjoiIzQxNkU3MyIsInQiOjF9/UmVudC1BLVN3YWc/vegan-style-personal-use.png" alt="logo of compony" height="60"></img></Link>
+                            <Link to="/" className="navbar-brand"><img src={`${process.env.PUBLIC_URL}/assets/images/logo.png`}  alt="logo of compony" height="60"></img></Link>
                            
                             <div>
                             <ul className="navbar-nav me-auto mb-2 mb-md-0">
@@ -68,16 +63,6 @@ class Nav extends Component {
                                 <li className="nav-item">
                                     <Link to="/cart" className="nav-link active" >Cart({cartItems})</Link>
                                 </li>
-                               {/* {
-                                 this.state.user === 2 ?  <li className="nav-item">
-                                 <Link to="/addproduct" className="nav-link active">Addproduct</Link>
-                             </li> : null
-                               } */}
-                               {/* {
-                                 this.state.user === 2 ?  <li className="nav-item">
-                                 <Link to="/orders" className="nav-link active">Show Orders</Link>
-                             </li> : null
-                               } */}
                                 {!this.state.isloggedin ? (
                                   <li className="nav-item">
                                   <Link to="login" className="nav-link active">Login</Link>
@@ -94,10 +79,7 @@ class Nav extends Component {
                                    <DropdownMenu>
                                    {this.state.user === 2 ?  <DropdownItem as={Link} to="/addproduct" >Addproduct</DropdownItem> : null }
                                    {this.state.user === 2 ?  <DropdownItem as={Link} to="/orders" >Show Orders</DropdownItem> : null }
-                                     {/* <DropdownItem disabled>Action</DropdownItem>
-                                     <DropdownItem>Another Action</DropdownItem>
-                                     <DropdownItem divider />
-                                     <DropdownItem>Another Action</DropdownItem> */}
+                                   {!this.state.user === 2 ?  <DropdownItem as={Link} to="/userpastorders" >past Orders</DropdownItem> : null }
                                    </DropdownMenu>
                                  </Dropdown>
                                 

@@ -6,15 +6,11 @@ class Checkout extends Component {
     constructor(props) {
         super(props);
         this.state={
-            
         }
         this.saveOrder=this.saveOrder.bind(this);
     }
     
-    componentDidMount() {
-      
-  
-        }
+
         saveOrder =(e)=>{
             const config={
                 headers:{
@@ -24,8 +20,8 @@ class Checkout extends Component {
                let ord1= JSON.parse(localStorage.getItem("cartItems"))
                axios.post(USER_API_BASE_URL+"/listOfOrder",ord1,config).then(
                 res =>{
-                   localStorage.setItem("order",res.data)
                    localStorage.removeItem("cartItems");
+                   alert("order Placed")
                    this.props.history.push('/');
                 }
             );
@@ -38,8 +34,9 @@ class Checkout extends Component {
         
         return (
             <div>
+                 
                 <button onClick={this.saveOrder}>Place order</button>
-                    {/* {orderdetail} */}
+                    
             </div>
         );
     }

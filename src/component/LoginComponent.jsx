@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
-//import axios from 'axios';
+
 import ApiService from "../Service/ApiService"
 class LoginComponent extends Component {
     constructor(props){
@@ -13,27 +13,19 @@ class LoginComponent extends Component {
         this.saveUser = this.saveUser.bind(this);
     }
 
-        // getuserinfo=()=>{
 
-        //     const username=localStorage.getItem('username')
-
-        //     axios.get("https://rentswag.herokuapp.com/users/fetchbyusername/"+username).then(
-        //         res =>{
-        //             localStorage.setItem("userinfo",JSON.stringify(res.data))
-        //         }
-                
-        //     );
-        // }
 
     saveUser = (e) => {
         
         e.preventDefault();
         let user = {username: this.state.username, password: this.state.password};
-       // localStorage.setItem('username',user.username)
+        localStorage.setItem('username',user.username)
         ApiService.loginUser(user)
             .then(res => {
                 localStorage.setItem('token',res.data.token)
                 localStorage.setItem('roles',res.data.roles)
+                localStorage.setItem('userinfo',res.data.usr)
+                
                 this.props.history.push('/');
                 window.location.reload();
                

@@ -11,11 +11,16 @@ import ProductList from './component/ProductList';
 import Cart from './component/Cart';
 import Checkout from './component/Checkout';
 import Orders from './component/Orders';
+import userpastorder from './component/userpastorder';
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="Bgimage" style={{ 
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/images/background.jpg'})` 
+    }} >
+    <div className="App " >
+ 
         <BrowserRouter>
           <Nav />
         <Route path="/" exact component={Home} />
@@ -28,8 +33,10 @@ function App() {
         </main>
         <Route exact path="/addproduct" component={AddProduct} />
         <Route exact path="/orders" component={Orders} />
+        <Route exact path="/userpastorders" component={userpastorder} />
         <Route exact path="/cart" component={Cart} />
         </BrowserRouter>
+        </div>
     </div>
   );
 }

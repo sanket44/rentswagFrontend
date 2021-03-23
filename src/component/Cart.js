@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 
 class Cart extends Component {
 constructor(props) {
@@ -26,8 +26,20 @@ removeFromCart=(p)=>{
     window.location.reload()
 };
 
+async getuserinfo(){
 
-adddates=(p,e)=>{
+    let username=localStorage.getItem("username")
+
+    axios.get("https://rentswag.herokuapp.com/users/fetchbyusername/"+username).then(
+        res =>{
+            localStorage.setItem("userinfo",JSON.stringify(res.data))
+        }
+        
+    );
+}
+
+ adddates=async(p,e)=>{
+        await this.getuserinfo();
     this.setState({ [e.target.name]: e.target.value });
     const cusinfo=JSON.parse(localStorage.getItem("userinfo"))
     const cartItems=this.state.cartItems.slice();

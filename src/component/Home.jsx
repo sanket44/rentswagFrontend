@@ -48,22 +48,7 @@ class Home extends Component {
      
    
     render() {
-        // const list1=this.state.products.map(p1 => 
-        // <div class="row">
-        //     <div class="col-sm">
-        //        {p1.code}
-        //     </div>
-        //     <div class="col-sm">
-        //     <img  src={p1.image}  width="100" alt="product" height="100"></img>
-        //     </div>
-        //     <div class="col-sm">
-        //        ₹{p1.price}
-        //     </div>
-        //     <div class="col-sm">
-        //     <button className="  btn btn-lg btn-primary btn btn-success " onClick={()=>this.addtocart(p1)}>Add</button>
-        //     </div>
-        //  </div>
-        //    );
+
 
            const list1=this.state.products.map(p1 => 
            <div className="product" key={p1.id}>
@@ -74,11 +59,11 @@ class Home extends Component {
              <div className="product-name">
                  {p1.name}
              </div>
-             <div className="product-price">
+             <div className="product-details">
                  {p1.description}
              </div>
              <div className="product-price">
-                 ${p1.price}.00
+             ₹{p1.price}.00
              </div>
          </div>
          {p1.status === 'hot' ? <div className="hot">HOT</div> : ''}
@@ -89,13 +74,10 @@ class Home extends Component {
         return (
            
 
-                        <div className="container" >
+                
                               <div className="products"> {list1}</div>
-                       
-       
-            </div>
-                        
-                        
+      
+                          
         
         );
     }
