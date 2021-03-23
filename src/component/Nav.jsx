@@ -79,7 +79,7 @@ class Nav extends Component {
                                    <DropdownMenu>
                                    {this.state.user === 2 ?  <DropdownItem as={Link} to="/addproduct" >Addproduct</DropdownItem> : null }
                                    {this.state.user === 2 ?  <DropdownItem as={Link} to="/orders" >Show Orders</DropdownItem> : null }
-                                   {!this.state.user === 2 ?  <DropdownItem as={Link} to="/userpastorders" >past Orders</DropdownItem> : null }
+                                   {this.state.user === 1 ?  <DropdownItem as={Link} to="/userpastorders" >past Orders</DropdownItem> : null }
                                    </DropdownMenu>
                                  </Dropdown>
                                 
