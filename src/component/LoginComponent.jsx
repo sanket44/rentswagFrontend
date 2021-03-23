@@ -24,7 +24,7 @@ class LoginComponent extends Component {
             .then(res => {
                 localStorage.setItem('token',res.data.token)
                 localStorage.setItem('roles',res.data.roles)
-                localStorage.setItem('userinfo',res.data.usr)
+                localStorage.setItem('userinfo',JSON.stringify(res.data.usr))
                 
                 this.props.history.push('/');
                 window.location.reload();

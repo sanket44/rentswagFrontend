@@ -5,39 +5,48 @@ class userpastorder extends Component {
         super(props);
         this.state={
             pastorders:localStorage.getItem("userinfo") ? JSON.parse(localStorage.getItem("userinfo")).order:[],
+            //localStorage.getItem("userinfo") ? JSON.parse(localStorage.getItem("userinfo")).order:[],
     }
     }
-    
-
+    componentDidMount(){
+                this.setState({
+                    pastorders:localStorage.getItem("userinfo") ? JSON.parse(localStorage.getItem("userinfo")).order:[],
+                })
+    }
     
     render() {
         const userpastorder=this.state.pastorders.slice();
+   
         const orders=userpastorder.map(o=>
-            <div class="row">
-                <div class="col-sm">
-                   {o.customerName}
-                </div>
-                {/* <div class="col-sm">
-                    {o.customerAddress}
-                </div>
-                <div class="col-sm">
-                   {o.customerPhone}
-                </div> */}
-                <div class="col-sm">
-                {o.productcode}
-                </div>
-                <div class="col-sm">
-                {new Date(o.orderFrom).toISOString().slice(0, 10).replace('T', ' ')}
-                </div>
-                <div class="col-sm">
-                {new Date(o.orderTo).toISOString().slice(0, 10).replace('T', ' ')}
-                </div>
-             </div>
+            <tr>
+                            <th> {o.customerName}</th>
+                            <th>{o.productcode}</th>
+                            <th>{new Date(o.orderFrom).toISOString().slice(0, 10).replace('T', ' ')}</th>
+                            <th>{new Date(o.orderTo).toISOString().slice(0, 10).replace('T', ' ')}</th>
+              </tr>
+
             
-            )      
+            )    
+            
+            
         return (
             <div>
-                {orders}
+               
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>P.Code</th>
+                            <th>DateFrom</th>
+                            <th>DateTo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        {orders}
+                       
+                    </tbody>
+                </table>
             </div>
         );
     }

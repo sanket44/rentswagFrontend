@@ -40,6 +40,7 @@ class Nav extends Component {
         localStorage.removeItem("userinfo");
         localStorage.removeItem("token");
         localStorage.removeItem("roles");
+        localStorage.removeItem("order");
         window.location.reload();
       };
 
@@ -60,9 +61,10 @@ class Nav extends Component {
                             <ul className="navbar-nav me-auto mb-2 mb-md-0">
                              
                                 
-                                <li className="nav-item">
+                                
+                                {this.state.isloggedin ? (<li className="nav-item">
                                     <Link to="/cart" className="nav-link active" >Cart({cartItems})</Link>
-                                </li>
+                                </li>) : null}
                                 {!this.state.isloggedin ? (
                                   <li className="nav-item">
                                   <Link to="login" className="nav-link active">Login</Link>
@@ -79,7 +81,7 @@ class Nav extends Component {
                                    <DropdownMenu>
                                    {this.state.user === 2 ?  <DropdownItem as={Link} to="/addproduct" >Addproduct</DropdownItem> : null }
                                    {this.state.user === 2 ?  <DropdownItem as={Link} to="/orders" >Show Orders</DropdownItem> : null }
-                                   {!this.state.user === 2 ?  <DropdownItem as={Link} to="/userpastorders" >past Orders</DropdownItem> : null }
+                                   {this.state.user === 1 ?  <DropdownItem as={Link} to="/userpastorders" >past Orders</DropdownItem> : null }
                                    </DropdownMenu>
                                  </Dropdown>
                                 

@@ -64,10 +64,12 @@ class Home extends Component {
              </div>
              <div className="product-price">
              ₹{p1.price}.00
-             </div>
+             </div>  
+             {p1.status === "hot" ? <div className="hot">HOT</div> : ''}
+             {p1.status === 'new' ? <div className="new">NEW</div> : ''}
+            
          </div>
-         {p1.status === 'hot' ? <div className="hot">HOT</div> : ''}
-         {p1.status === 'new' ? <div className="new">NEW</div> : ''}
+         
          
          <button className="  btn btn-lg btn-primary btn btn-success " onClick={()=>this.addtocart(p1)}>Add</button>
          </div>);

@@ -74,6 +74,16 @@
       flex-direction: column;
     }
   }
+  .hot{
+    position: absolute;
+    top: 0;
+    background:greenyellow;
+  }
+  .new{
+    position: absolute;
+    top: 0;
+    background:rgb(255, 158, 47);
+  }
   /* @media only screen and (max-width: 400px) { 
     .products {
       flex-flow: row wrap;
@@ -129,3 +139,24 @@
     font-size: 14px;
     cursor: pointer;
   }
+   /* Table styles */
+  .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+   margin-right: auto;
+
+}
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: center;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}

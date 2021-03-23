@@ -25,42 +25,36 @@ class Orders extends Component {
     )
   }
   
-  render() {
-       const orders=this.state.orders.map(o=>
-        <div class="row">
-            <div class="col-sm">
-               {o.customerName}
-            </div>
-            <div class="col-sm">
-                {o.customerAddress}
-            </div>
-            <div class="col-sm">
-               {o.customerPhone}
-            </div>
-            <div class="col-sm">
-            {o.productcode}
-            </div>
-            <div class="col-sm">
-            {new Date(o.orderFrom).toISOString().slice(0, 10).replace('T', ' ')}
-            </div>
-            <div class="col-sm">
-            {new Date(o.orderTo).toISOString().slice(0, 10).replace('T', ' ')}
-            </div>
-         </div>
-        
+  render() {    
+      const orders=this.state.orders.map(o=>
+        <tr>
+        <th> {o.customerName}</th>
+        <th> {o.customerAddress}</th>
+        <th> {o.customerPhone}</th>
+        <th>{o.productcode}</th>
+        <th>{new Date(o.orderFrom).toISOString().slice(0, 10).replace('T', ' ')}</th>
+        <th>{new Date(o.orderTo).toISOString().slice(0, 10).replace('T', ' ')}</th>
+</tr>
         )      
     return (
       <div>
-        <div class="row">
-          
-        <div class="col"><strong>Name</strong></div>
-        <div class="col"><strong>Address</strong></div>
-        <div class="col"><strong>MobileNO</strong></div>
-        <div class="col"><strong>P.Code</strong></div>  
-        <div class="col"><strong>From</strong></div>
-        <div class="col"><strong>TO</strong></div>
-       </div>
-          {orders}
+              <table class="styled-table">
+                    <thead>
+                           <tr>
+                                  <th>Name</th>
+                                  <th>Address</th>
+                                  <th>MobileNO</th>
+                                  <th>P.Code</th>
+                                  <th>DateFrom</th>
+                                  <th>DateTo</th>
+                           </tr>
+                    </thead>
+                    <tbody>
+                        
+                        {orders}
+                       
+                    </tbody>
+              </table>
 
       </div>
     );
