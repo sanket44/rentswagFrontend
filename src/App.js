@@ -16,9 +16,10 @@ import userpastorder from './component/userpastorder';
 
 function App() {
   return (
-    <div className="Bgimage" style={{ 
-      backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/images/background.jpg'})` 
-    }} >
+    // <div className="Bgimage" style={{ 
+    //   // backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/images/background.jpg'})` 
+    // }} >
+    <div className="Bgimage" >
     <div className="App " >
  
         <BrowserRouter>

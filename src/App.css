@@ -4,11 +4,11 @@
   
 }
 .Bgimage{
-  background-position: center center;
+  /* background-position: center center;
   background-attachment: fixed;
   background-repeat: repeat; 
-  background-size: cover;
-
+  background-size: cover; */
+  background-color: rgb(198, 216, 235);
 }
 
 .App-logo {
