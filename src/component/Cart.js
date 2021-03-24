@@ -178,7 +178,7 @@ onChangeto = (p,e) =>{this.setState({ [e.target.name]: e.target.value });
                 <div className="col-sm-12 col-md-6 text-right">
                 <Link to="/checkout" className="btn btn-lg btn-block btn-success">Checkout</Link>
                    
-                </div>
+                </div>0
             </div>
         </div>
     </div>

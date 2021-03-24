@@ -12,6 +12,7 @@ import Cart from './component/Cart';
 import Checkout from './component/Checkout';
 import Orders from './component/Orders';
 import userpastorder from './component/userpastorder';
+import updatedetails from './component/updatedetails';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <main className="form-signin"> 
             <Route path="/login" component={LoginComponent} />
             <Route path="/register" component={Register} />
+            <Route path="/updatedetails" component={updatedetails} />
            
             <Route exact path="/products" component={ProductList} />
             <Route exact path="/checkout" component={Checkout} />

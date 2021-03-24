@@ -20,7 +20,7 @@ class Register extends Component {
         let user = {username: this.state.username, password: this.state.password, email: this.state.email, phone: this.state.phone, cname: this.state.cname, address:this.state.address};
         ApiService.addUser(user)
             .then(res => {
-                this.setState({message : 'User added successfully.'});
+                // this.setState({message : 'User added successfully.'});
                 alert("Registration Sucessfull Now verify email to activate");
                 this.props.history.push('/login');
                

@@ -34,16 +34,13 @@ class ApiService {
     GetallOrders() {
         return axios.get(""+USER_API_BASE_URL+'/getallorder',this.config);
     }
-    // deleteUser(userId) {
-    //     return axios.get(USER_API_BASE_URL + '/' + userId);
-    // }
 
     loginUser(user){
         return axios.post(""+USER_API_BASE_URL+'/authenticate',user);
     }
 
     editUser(user) {
-        return axios.put(USER_API_BASE_URL + '/' + user.id, user);
+        return axios.post("https://rentswag.herokuapp.com/users/updateDetails",user);
     }
      
     

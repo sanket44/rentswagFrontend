@@ -17,7 +17,7 @@ class Nav extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          user: localStorage.getItem("roles") ? JSON.parse(localStorage.getItem("roles")) : 1,
+          user: localStorage.getItem("roles") ? JSON.parse(localStorage.getItem("roles")) : 0,
           products: [],
           cartItems:[],
           isloggedin:localStorage.getItem("token") ? true : false
@@ -82,6 +82,7 @@ class Nav extends Component {
                                    {this.state.user === 2 ?  <DropdownItem as={Link} to="/addproduct" >Addproduct</DropdownItem> : null }
                                    {this.state.user === 2 ?  <DropdownItem as={Link} to="/orders" >Show Orders</DropdownItem> : null }
                                    {this.state.user === 1 ?  <DropdownItem as={Link} to="/userpastorders" >past Orders</DropdownItem> : null }
+                                   {this.state.user === 1 ?  <DropdownItem as={Link} to="/updatedetails" >Update</DropdownItem> : null }
                                    </DropdownMenu>
                                  </Dropdown>
                                 
