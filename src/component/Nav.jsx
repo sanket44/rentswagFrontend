@@ -8,8 +8,6 @@ import DropdownToggle from "react-bootstrap/esm/DropdownToggle";
 
 import {  Link } from "react-router-dom";
 
-
-
 class Nav extends Component {
 
 
@@ -24,13 +22,11 @@ class Nav extends Component {
           
         };
         this.routerRef = React.createRef();
-        //  window.addEventListener('storage', (e) => this.storageChanged(e));
-      
         
       };
 
     
-
+     
 
       logout = (e) => {
         e.preventDefault();

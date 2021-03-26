@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
+import { Link } from 'react-router-dom';
 
 import ApiService from "../Service/ApiService"
 class LoginComponent extends Component {
@@ -25,7 +26,7 @@ class LoginComponent extends Component {
                 localStorage.setItem('token',res.data.token)
                 localStorage.setItem('roles',res.data.roles)
                 localStorage.setItem('userinfo',JSON.stringify(res.data.usr))
-                
+                localStorage.removeItem("cartItems");   
                 this.props.history.push('/');
                 window.location.reload();
                
@@ -33,19 +34,21 @@ class LoginComponent extends Component {
             ).catch(error=>{
                 if(error.response.status === 401 ){
                     this.setState({
-                    
                         msg:"Password is wrong OR Your not Verified"
                     })
+                    window.location.reload();
                 }
                 if(error.response.status === 403 ){
                     this.setState({
                         msg:"Invalid username"
                     })
+                    window.location.reload();
                 }
                 if(error.response.status === 404 ){
                     this.setState({
                         msg:"Invalid  password"
                     })
+                    window.location.reload();
                 }
                 
             }
@@ -65,7 +68,9 @@ class LoginComponent extends Component {
                             <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
                             <input type="username"  className="form-control" name="username" placeholder="User Name" value={this.state.username}  onChange={this.onChange} required autoFocus />
                             <input type="password"  placeholder="password" name="password" className="form-control" value={this.state.password} onChange={this.onChange} required />
-                            <button className=" w-100 btn btn-lg btn-primary btn btn-success " onClick={this.saveUser}>LogIn</button>
+                            <button className=" w-100 btn btn-lg btn-primary btn btn-success "  onClick={this.saveUser}>Login</button>
+                            <h1>     </h1>
+                            <Link to="/forgetpassword" >ForgetPassword</Link>
                         </form>
                         {this.state.msg &&  window.alert(this.state.msg)}
             </div>

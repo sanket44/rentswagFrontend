@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ApiService from '../Service/ApiService';
+import 'react-phone-number-input/style.css'
 
 class Register extends Component {
     constructor(props){
@@ -20,7 +21,7 @@ class Register extends Component {
         let user = {username: this.state.username, password: this.state.password, email: this.state.email, phone: this.state.phone, cname: this.state.cname, address:this.state.address};
         ApiService.addUser(user)
             .then(res => {
-                // this.setState({message : 'User added successfully.'});
+               
                 alert("Registration Sucessfull Now verify email to activate");
                 this.props.history.push('/login');
                
@@ -35,19 +36,24 @@ class Register extends Component {
     }
     onChange = (e) =>
     this.setState({ [e.target.name]: e.target.value });
-    
+
     render() {
         return (
             <div>
                         <form>
                             <h1 className="h3 mb-3 fw-normal">Please Register</h1>
-                            <input type="username"  className="form-control" name="username" placeholder="User Name" value={this.state.username}  onChange={this.onChange} required  />
+                            <input type="username"  className="form-control" name="username" placeholder="User Name" value={this.state.username}  onChange={this.onChange} required />
+                            <h1>     </h1>
                             <input type="password"  placeholder="password" name="password" className="form-control" value={this.state.password} onChange={this.onChange} required />
+                            <h1>     </h1>
                             <input type="email"placeholder="Email" name="email" className="form-control" value={this.state.email} onChange={this.onChange}/>
-                            <input type="number"placeholder="PhoneNo" name="phone" className="form-control" value={this.state.phone} onChange={this.onChange}/>
+                            <h1>     </h1>
+                            <input type="number"placeholder="PhoneNo" name="phone"  className="form-control" value={this.state.phone} onChange={this.onChange}/>
+                            <h1>     </h1>
                             <input type="Name" placeholder="Name" name="cname" className="form-control" value={this.state.cname} onChange={this.onChange}/>
+                            <h1>     </h1>
                             <input type="Name" placeholder="Address" name="address" className="form-control" value={this.state.address} onChange={this.onChange}/>
-                            <div className="checkbox mb-3"></div>
+                        
                             <button className=" w-100 btn btn-lg btn-primary btn btn-success " onClick={(e)=>this.saveUser(e)}>submit</button>
                            
                         </form>

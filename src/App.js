@@ -13,13 +13,12 @@ import Checkout from './component/Checkout';
 import Orders from './component/Orders';
 import userpastorder from './component/userpastorder';
 import updatedetails from './component/updatedetails';
+import Forgetpassword from './component/Forgetpassword';
+import Resetpassword from './component/Resetpassword';
 
 
 function App() {
   return (
-    // <div className="Bgimage" style={{ 
-    //   // backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/images/background.jpg'})` 
-    // }} >
     <div className="Bgimage" >
     <div className="App " >
  
@@ -33,11 +32,15 @@ function App() {
            
             <Route exact path="/products" component={ProductList} />
             <Route exact path="/checkout" component={Checkout} />
+            
         </main>
         <Route exact path="/addproduct" component={AddProduct} />
+        <Route exact path="/forgetpassword" component={Forgetpassword} />
+        <Route exact path="/resetpassword" component={Resetpassword} />
         <Route exact path="/orders" component={Orders} />
         <Route exact path="/userpastorders" component={userpastorder} />
         <Route exact path="/cart" component={Cart} />
+        
         </BrowserRouter>
         </div>
     </div>

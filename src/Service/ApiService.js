@@ -12,8 +12,8 @@ class ApiService {
           }
     }
 
-    fetchUsers() {
-        return axios.get(USER_API_BASE_URL);
+    fetchUsers(username) {
+        return axios.get(USER_API_BASE_URL+ '/fetchbyusername/' +username);
     }
 
     fetchUserById(userId) {
@@ -43,6 +43,17 @@ class ApiService {
         return axios.post("https://rentswag.herokuapp.com/users/updateDetails",user);
     }
      
+    updatestatus(id,status) {
+        return axios.get("https:rentswag.herokuapp.com/users/changestatus/"+id+"/"+status,this.config);
+    }
+
+    forgetpassword(email) {
+        return axios.post("https:rentswag.herokuapp.com/users/forgot_password/"+email);
+    }
+
+    resetpassword(token,password) {
+        return axios.post("https:rentswag.herokuapp.com/users/reset_password/"+token+"/"+password);
+    }
     
 }
 

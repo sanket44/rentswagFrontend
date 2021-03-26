@@ -103,8 +103,8 @@ onChangeto = (p,e) =>{this.setState({ [e.target.name]: e.target.value });
         <td> </td>
         <td>{p.name}</td>
         <td>In stock</td>
-        <td><input type="date" name="from" onChange={(e)=>(this.onChange(p,e))  } ></input></td>
-        <td><input type="date" name="to" onChange={(e)=>this.onChangeto(p,e) }></input></td>
+        <td><input type="date" name="from" min={new Date().toISOString().split("T")[0]} onChange={(e)=>(this.onChange(p,e))  } ></input></td>
+        <td><input type="date" name="to" min={new Date().toISOString().split("T")[0]} onChange={(e)=>this.onChangeto(p,e) }></input></td>
         <td>{p.count}</td>
         <td className="text-right">₹{p.price} X {this.getDifferenceInDays(new Date(p.orderFrom),new Date(p.orderTo))} =</td>
         <td className="text-right">{p.price*this.getDifferenceInDays(new Date(p.orderFrom),new Date(p.orderTo))}</td>
@@ -178,7 +178,7 @@ onChangeto = (p,e) =>{this.setState({ [e.target.name]: e.target.value });
                 <div className="col-sm-12 col-md-6 text-right">
                 <Link to="/checkout" className="btn btn-lg btn-block btn-success">Checkout</Link>
                    
-                </div>0
+                </div>
             </div>
         </div>
     </div>
