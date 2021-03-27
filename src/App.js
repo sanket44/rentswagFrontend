@@ -16,6 +16,8 @@ import updatedetails from './component/updatedetails';
 import Forgetpassword from './component/Forgetpassword';
 import Resetpassword from './component/Resetpassword';
 import Footer from './component/Footer';
+import aboutus from './component/aboutus';
+import contactus from './component/contactus';
 
 
 function App() {
@@ -41,6 +43,8 @@ function App() {
         <Route exact path="/orders" component={Orders} />
         <Route exact path="/userpastorders" component={userpastorder} />
         <Route exact path="/cart" component={Cart} />
+        <Route exact path="/about" component={aboutus} />
+        <Route exact path="/contact" component={contactus} />
         <Footer />
         </BrowserRouter>
         </div>
