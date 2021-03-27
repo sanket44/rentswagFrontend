@@ -10,7 +10,7 @@ class updatedetails extends Component {
             email:JSON.parse(localStorage.getItem("userinfo")).email,
             phone: '',
             cname: JSON.parse(localStorage.getItem("userinfo")).cname,
-            address:'',
+            address:JSON.parse(localStorage.getItem("userinfo")).address,
             id:JSON.parse(localStorage.getItem("userinfo")).id,
             msg:'',
             usr:JSON.parse(localStorage.getItem("userinfo")) || null
@@ -52,11 +52,11 @@ class updatedetails extends Component {
             <div>
                  <form>
                             <h1 className="h3 mb-3 fw-normal">Updation Form</h1>
-                            <input type="password"  className="form-control" name="id" placeholder="Id" value={this.state.id} onChange={this.onChange} required  />
+                            {/* <input type="password"  className="form-control" name="id" placeholder="Id" value={this.state.id} onChange={this.onChange} required  /> */}
                             <input type="username"  className="form-control" name="username" placeholder="User Name" value={this.state.username}  onChange={this.onChange} required  />
                             <input type="password"  placeholder="password" name="password" className="form-control" value={this.state.password}   onChange={this.onChange} required />
                             <input type="email"placeholder="Email" name="email" className="form-control" value={this.state.email} onChange={this.onChange}/>
-                            <input type="number"placeholder="PhoneNo" name="phone" className="form-control" value={this.state.phone}  onChange={this.onChange}/>
+                            <input type="tel"placeholder="PhoneNo" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"   minlength="10" maxlength="10" className="form-control" value={this.state.phone}  onChange={this.onChange}/>
                             <input type="Name" placeholder="Name" name="cname" className="form-control" value={this.state.cname} onChange={this.onChange}/>
                             <input type="Name" placeholder="Address" name="address" value={this.state.address} className="form-control" onChange={this.onChange}/>
                             {/* <div className="checkbox mb-3"></div> */}

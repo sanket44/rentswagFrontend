@@ -24,7 +24,7 @@ class Forgetpassword extends Component {
     
     // }
     forgetpass=()=>{
-        var email="sanketdhande44@gmail.com"
+        var email=this.state.email
         ApiService.forgetpassword(email).then
         (
                 

@@ -9,9 +9,13 @@ class userpastorder extends Component {
             //localStorage.getItem("userinfo") ? JSON.parse(localStorage.getItem("userinfo")).order:[],
     }
     }
-    componentDidUpdate(){
-                this.fetchuser()
-                }
+    componentDidMount(){
+        this.fetchuser()
+    }
+    // componentDidUpdate(){
+        
+    //             this.fetchuser()
+    //             }
                 
                 fetchuser=()=>{
                     var username=localStorage.getItem("username")
@@ -24,6 +28,7 @@ class userpastorder extends Component {
                             )
                         }
                     )
+                   
                 }
     
     cancleorder=(o)=>{
@@ -33,7 +38,9 @@ class userpastorder extends Component {
                ApiService.updatestatus(id,2).then(
                  alert("Order Cancled"),
                )
-               this.fetchuser()
+              this.fetchuser()
+              window.location.reload()
+             
        }
     render() {
         const userpastorder=this.state.pastorders.slice();

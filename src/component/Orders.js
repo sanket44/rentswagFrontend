@@ -9,32 +9,43 @@ class Orders extends Component {
     this.retriveorders=this.retriveorders.bind(this);
   }
 
-  componentDidUpdate(){
+  componentDidMount(){
     this.retriveorders();
   }
+  // componentDidUpdate(){
+  //   this.retriveorders();
+  // }
 
   retriveorders=()=>{
     ApiService.GetallOrders().then(
       res => this.setState({
         orders: res.data
-      })
+      }),
+     
     )
+   
   }
   cancleorder=(o)=>{
    var id=o.id;
    console.log(o.id)
     alert("are you sure")
           ApiService.updatestatus(id,2).then(
-            alert("Order Cancled")
+            alert("Order Cancled"),
+          
           )
+         this.retriveorders()
+         window.location.reload()
   }
 
   delivered=(o)=>{
     var id=o.id;
     console.log(o.id)
     ApiService.updatestatus(id,1).then(
-      alert("status updated to delivered")
+      alert("status updated to delivered"),
+    
     )
+    this.retriveorders()
+   window.location.reload()
   }
   
   render() {    

@@ -15,6 +15,7 @@ import userpastorder from './component/userpastorder';
 import updatedetails from './component/updatedetails';
 import Forgetpassword from './component/Forgetpassword';
 import Resetpassword from './component/Resetpassword';
+import Footer from './component/Footer';
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
         <Route exact path="/orders" component={Orders} />
         <Route exact path="/userpastorders" component={userpastorder} />
         <Route exact path="/cart" component={Cart} />
-        
+        <Footer />
         </BrowserRouter>
         </div>
     </div>

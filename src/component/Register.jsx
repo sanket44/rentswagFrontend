@@ -48,7 +48,7 @@ class Register extends Component {
                             <h1>     </h1>
                             <input type="email"placeholder="Email" name="email" className="form-control" value={this.state.email} onChange={this.onChange}/>
                             <h1>     </h1>
-                            <input type="number"placeholder="PhoneNo" name="phone"  className="form-control" value={this.state.phone} onChange={this.onChange}/>
+                            <input type="tel"placeholder="PhoneNo" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"   minlength="10" maxlength="10" className="form-control" value={this.state.phone} onChange={this.onChange} required/>
                             <h1>     </h1>
                             <input type="Name" placeholder="Name" name="cname" className="form-control" value={this.state.cname} onChange={this.onChange}/>
                             <h1>     </h1>
