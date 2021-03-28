@@ -7,13 +7,13 @@ class updatedetails extends Component {
         this.state ={
             username: '',
             password: '',
-            email:JSON.parse(localStorage.getItem("userinfo")).email,
+            email:localStorage.getItem("userinfo") ? JSON.parse(localStorage.getItem("userinfo")).email: '',
             phone: '',
-            cname: JSON.parse(localStorage.getItem("userinfo")).cname,
-            address:JSON.parse(localStorage.getItem("userinfo")).address,
-            id:JSON.parse(localStorage.getItem("userinfo")).id,
+            cname: localStorage.getItem("userinfo") ? JSON.parse(localStorage.getItem("userinfo")).cname:'',
+            address:localStorage.getItem("userinfo") ? JSON.parse(localStorage.getItem("userinfo")).address:'',
+            id:localStorage.getItem("userinfo") ? JSON.parse(localStorage.getItem("userinfo")).id:'',
             msg:'',
-            usr:JSON.parse(localStorage.getItem("userinfo")) || null
+            usr:localStorage.getItem("userinfo") ? JSON.parse(localStorage.getItem("userinfo")) : null
         }
         this.updateuser = this.updateuser.bind(this);
     }

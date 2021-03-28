@@ -12,6 +12,12 @@ class userpastorder extends Component {
     componentDidMount(){
         this.fetchuser()
     }
+    componentDidUpdate(prevProps,prevState){
+        if(prevState.pastorders!==this.state.pastorders)
+        {
+          return this.fetchuser()
+        }
+      }
     // componentDidUpdate(){
         
     //             this.fetchuser()
@@ -39,8 +45,6 @@ class userpastorder extends Component {
                  alert("Order Cancled"),
                )
               this.fetchuser()
-              window.location.reload()
-             
        }
     render() {
         const userpastorder=this.state.pastorders.slice();
