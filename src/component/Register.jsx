@@ -40,24 +40,25 @@ class Register extends Component {
     render() {
         return (
             <div>
+                          {this.state.msg &&  <div className="alert alert-danger">UserName or email already been used Or You submitted Empty Boxes</div>}
                         <form>
                             <h1 className="h3 mb-3 fw-normal">Please Register</h1>
                             <input type="username"  className="form-control" name="username" placeholder="User Name" value={this.state.username}  onChange={this.onChange} required />
                             <h1>     </h1>
                             <input type="password"  placeholder="password" name="password" className="form-control" value={this.state.password} onChange={this.onChange} required />
                             <h1>     </h1>
-                            <input type="email"placeholder="Email" name="email" className="form-control" value={this.state.email} onChange={this.onChange}/>
+                            <input type="email"placeholder="Email" name="email" className="form-control" value={this.state.email} onChange={this.onChange} required/>
                             <h1>     </h1>
                             <input type="tel"placeholder="PhoneNo" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"   minlength="10" maxlength="10" className="form-control" value={this.state.phone} onChange={this.onChange} required/>
                             <h1>     </h1>
-                            <input type="Name" placeholder="Name" name="cname" className="form-control" value={this.state.cname} onChange={this.onChange}/>
+                            <input type="Name" placeholder="Name" name="cname" className="form-control" value={this.state.cname} onChange={this.onChange} required/>
                             <h1>     </h1>
-                            <input type="Name" placeholder="Address" name="address" className="form-control" value={this.state.address} onChange={this.onChange}/>
+                            <input type="Name" placeholder="Address" name="address" className="form-control" value={this.state.address} onChange={this.onChange} required/>
                         
                             <button className=" w-100 btn btn-lg btn-primary btn btn-success " onClick={(e)=>this.saveUser(e)}>submit</button>
                            
                         </form>
-                        {this.state.msg &&  <div><strong className="alert alert-danger">UserName or email already been used</strong></div>}
+                        
             </div>
         );
     }

@@ -16,6 +16,7 @@ class LoginComponent extends Component {
 
 
 
+
     saveUser = (e) => {
         
         e.preventDefault();
@@ -36,19 +37,19 @@ class LoginComponent extends Component {
                     this.setState({
                         msg:"Password is wrong OR Your not Verified"
                     })
-                    window.location.reload();
+                    
                 }
                 if(error.response.status === 403 ){
                     this.setState({
                         msg:"Invalid username"
                     })
-                    window.location.reload();
+                   
                 }
                 if(error.response.status === 404 ){
                     this.setState({
                         msg:"Invalid  password"
                     })
-                    window.location.reload();
+                    
                 }
                 
             }
@@ -61,18 +62,20 @@ class LoginComponent extends Component {
     this.setState({ [e.target.name]: e.target.value });
     
     render() {
+
+
         return (
             <div>
+                            {this.state.msg  &&   <div className="alert alert-danger">{this.state.msg}</div>}
                         <form>
-                          
                             <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
-                            <input type="username"  className="form-control" name="username" placeholder="User Name" value={this.state.username}  onChange={this.onChange} required autoFocus />
+                            <input type="username"  className="form-control" name="username" placeholder="User Name" id="username" value={this.state.username}  onChange={this.onChange} required autoFocus />
                             <input type="password"  placeholder="password" name="password" className="form-control" value={this.state.password} onChange={this.onChange} required />
-                            <button className=" w-100 btn btn-lg btn-primary btn btn-success "  onClick={this.saveUser}>Login</button>
+                            <button className=" w-100 btn btn-lg btn-primary btn btn-success " id="send" onClick={this.saveUser}>Login</button>
                             <h1>     </h1>
                             <Link to="/forgetpassword" >ForgetPassword</Link>
                         </form>
-                        {this.state.msg &&  window.alert(this.state.msg)}
+                    
             </div>
         );
     }
