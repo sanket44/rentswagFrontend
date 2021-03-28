@@ -11,13 +11,13 @@ return (
     		<div className="mail_section">
     			<div className="row">
     				<div className="col-sm-6 col-lg-2" style={{marginLeft:"20px"}}>
-    					<div><NavLink exact={true} to="/"><img src="Assets/images/logo.png "  alt="logo of compony" /></NavLink></div>
+    					<div><NavLink exact={true} to="/"><img src="assets/images/logo.png "  alt="logo of compony" /></NavLink></div>
     				</div>
     				<div className="col-sm-6 col-lg-2"  style={{marginLeft:"10px"}}>
-    					<div className="footer-logo"><img src="Assets/images/phone-icon.png" alt="logo of compony"/><span className="map_text">+1800-180-1111</span></div>
+    					<div className="footer-logo"><img src="assets/images/phone-icon.png" alt="logo of compony"/><span className="map_text">+1800-180-1111</span></div>
     				</div>
     				<div className="col-sm-6 col-lg-3">
-    					<div className="footer-logo"><img src="Assets/images/email-icon.png"  alt="logo of compony"/><span className="map_text">help@rentaswag.co.in</span></div>
+    					<div className="footer-logo"><img src="assets/images/email-icon.png"  alt="logo of compony"/><span className="map_text">help@rentaswag.co.in</span></div>
     				</div>
     				<div className="col-sm-6 col-lg-3">
     					<div className="social_icon">
