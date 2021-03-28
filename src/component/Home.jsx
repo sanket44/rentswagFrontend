@@ -63,7 +63,7 @@ class Home extends Component {
                  {p1.description}
              </div>
              <div className="product-price">
-             ₹{p1.price}.00
+             ₹{p1.price}.00 /day
              </div>  
              {p1.status === "hot" ? <div className="hot">HOT</div> : ''}
              {p1.status === 'new' ? <div className="new">NEW</div> : ''}

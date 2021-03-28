@@ -4,7 +4,8 @@ class Orders extends Component {
   constructor(props) {
     super(props);
     this.state={
-            orders:[]
+            orders:[],
+            isupdate:false
     }
     this.retriveorders=this.retriveorders.bind(this);
   }
@@ -12,9 +13,13 @@ class Orders extends Component {
   componentDidMount(){
     this.retriveorders();
   }
-  // componentDidUpdate(){
-  //   this.retriveorders();
-  // }
+
+  componentDidUpdate(prevProps,prevState){
+    if(prevState.orders!==this.state.orders)
+    {
+      return this.retriveorders()
+    }
+  }
 
   retriveorders=()=>{
     ApiService.GetallOrders().then(
@@ -34,7 +39,7 @@ class Orders extends Component {
           
           )
          this.retriveorders()
-         window.location.reload()
+        
   }
 
   delivered=(o)=>{
@@ -45,7 +50,7 @@ class Orders extends Component {
     
     )
     this.retriveorders()
-   window.location.reload()
+  
   }
   
   render() {    

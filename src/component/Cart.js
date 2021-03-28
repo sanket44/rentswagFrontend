@@ -97,14 +97,16 @@ onChangeto = (p,e) =>{this.setState({ [e.target.name]: e.target.value });
 
 
   render() {
-
+    var d = new Date();
+d.setDate(d.getDate() + 15);
+var rentdate=d.toISOString().split('T')[0];
       const cartItemslist=this.state.cartItems.map(p=>
         <tr>
         <td> </td>
         <td>{p.name}</td>
         <td>In stock</td>
         <td><input type="date" name="from" min={new Date().toISOString().split("T")[0]} onChange={(e)=>(this.onChange(p,e)) } ></input></td>
-        <td><input type="date" name="to" min={new Date().toISOString().split("T")[0]} onChange={(e)=>this.onChangeto(p,e) }></input></td>
+        <td><input type="date" name="to" min={rentdate} onChange={(e)=>this.onChangeto(p,e) }></input></td>
         <td>{p.count}</td>
         <td className="text-right">₹{p.price} X {this.getDifferenceInDays(new Date(p.orderFrom),new Date(p.orderTo))} =</td>
         <td className="text-right">{p.price*this.getDifferenceInDays(new Date(p.orderFrom),new Date(p.orderTo))}</td>

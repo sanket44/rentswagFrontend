@@ -24,6 +24,7 @@ class Nav extends Component {
         this.routerRef = React.createRef();
         
       };
+     
 
     
      
@@ -43,9 +44,7 @@ class Nav extends Component {
   
       
     render() {
-
-     
-     let cartItems=localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")).length :[];
+let cartItems=localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")).length :[];
         return (
         
             <div>
