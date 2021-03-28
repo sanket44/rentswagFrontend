@@ -22,17 +22,7 @@ return (
                 
                 <div className="row">
                
-                      <Meetteam name="Aman Aggarwal" quote="" designation="UI Designer" photo="./Assets/images/chair1.png"/>
-               
-                      <Meetteam name="Ritu" quote="" designation="UI Designer" photo="./Assets/images/chair1.png"/>
-               
-                      <Meetteam name="Rinkesh Goyal" quote="" designation="API+Database" photo="./Assets/images/chair1.png"/>
-               
-                      <Meetteam name="Samarth" quote="" designation="UI Designer" photo="./Assets/images/chair1.png"/>
-               
-                      <Meetteam name="Rahul Kulkarni" quote="" designation="API+UI" photo="./Assets/images/chair1.png"/>
-               
-                      <Meetteam name="Sanket Dhande" quote="" designation="API+Database+UI" photo="./Assets/images/chair1.png"/>
+                      <Meetteam name="Sanket Dhande" quote="" designation="Full Stack Developer " photo="./assets/images/chair1.png"/>
                
 
 
@@ -58,7 +48,7 @@ Why renting, you ask? <br/><br/><small className="text-muted">Well, because we u
         <div className="col-lg-4 offset-lg-1 col-md-6 col-sm-12 col-xs-12 " >
         <img style={{  margin:"100px 50px 50px 50px"
 }}
- src="./Assets/images/logo.png" alt="Author One" width="200px" height="200px"/>
+ src="./assets/images/logo.png" alt="Author One" width="200px" height="200px"/>
                            
         </div>
 
@@ -70,7 +60,7 @@ Why renting, you ask? <br/><br/><small className="text-muted">Well, because we u
                     >
                     <div className="features-item">
                         <div className="features-icon">
-                            <img src="./Assets/images/finestquality.jpg" alt=""/>
+                            <img src="./assets/images/finestquality.jpg" alt=""/>
                             <h4>Finest Quality Products</h4>
                             <p style={{height:"65px"}}>Quality matters to you, and us! That's why we do a strict quality-check for every product.</p>                            
                         </div>
@@ -79,7 +69,7 @@ Why renting, you ask? <br/><br/><small className="text-muted">Well, because we u
                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                         <div className="features-item">
                         <div className="features-icon">
-                            <img src="./Assets/images/relocation.JPG" alt=""/>
+                            <img src="./assets/images/relocation.JPG" alt=""/>
                             
                             
                             
@@ -92,7 +82,7 @@ Why renting, you ask? <br/><br/><small className="text-muted">Well, because we u
                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <div className="features-item">
                         <div className="features-icon">
-                            <img src="./Assets/images/easymaintain.JPG" alt=""/>
+                            <img src="./assets/images/easymaintain.JPG" alt=""/>
                             <h4>Free maintenance</h4>
                             <p style={{height:"70px"}}>Keeping your rented products in a spick and span condition is on us, so you can sit back and relax.</p>
                           
