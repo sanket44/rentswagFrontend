@@ -31,7 +31,7 @@ class ApiService {
         return axios.post(""+USER_API_BASE_URL+'/addproducts', products,this.config);
     }
 
-    GetallOrders() {
+    async GetallOrders() {
         return axios.get(""+USER_API_BASE_URL+'/getallorder',this.config);
     }
 
@@ -43,7 +43,7 @@ class ApiService {
         return axios.post("https://rentswag.herokuapp.com/users/updateDetails",user);
     }
      
-    updatestatus(id,status) {
+   async updatestatus(id,status) {
         return axios.get("https:rentswag.herokuapp.com/users/changestatus/"+id+"/"+status,this.config);
     }
 

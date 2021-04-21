@@ -22,7 +22,6 @@ class Nav extends Component {
           
         };
         this.routerRef = React.createRef();
-        
       };
      
 
@@ -54,9 +53,6 @@ let cartItems=localStorage.getItem("cartItems") ? JSON.parse(localStorage.getIte
                            
                             <div>
                             <ul className="navbar-nav me-auto mb-2 mb-md-0">
-                             
-                                
-                                
                                 {this.state.isloggedin ? (<li className="nav-item">
                                     <Link to="/cart" className="nav-link active testing1" >Cart({cartItems})</Link>
                                 </li>) : null}

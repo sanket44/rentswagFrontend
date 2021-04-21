@@ -143,16 +143,6 @@ var rentdate=d.toISOString().split('T')[0];
                     </thead>
                     <tbody>
                         {cartItemslist}
-                        {/* <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Sub-Total</td> 
-                             <td class="text-right">255,90 </td>
-                            <td></td>
-                        </tr> */}
                         <tr>
                            
                         </tr>
