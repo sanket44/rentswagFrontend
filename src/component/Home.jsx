@@ -42,8 +42,10 @@ class Home extends Component {
         }
         this.setState({cartItems});
         localStorage.setItem("cartItems",JSON.stringify(cartItems));
+
        // window.location.reload(true);
-       window.location.replace(window.location.href)
+    window.location.replace(window.location.href)
+  
     };
      
    

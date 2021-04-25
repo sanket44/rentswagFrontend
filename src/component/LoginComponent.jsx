@@ -29,7 +29,7 @@ class LoginComponent extends Component {
                 localStorage.setItem('userinfo',JSON.stringify(res.data.usr))
                 localStorage.removeItem("cartItems");   
                 this.props.history.push('/');
-                window.location.reload();
+                 window.location.reload();
                
             }
             ).catch(error=>{

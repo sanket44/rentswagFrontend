@@ -24,6 +24,7 @@ function Userpastorder() {
                     updatepastorders(orders);
                 }
                 fetchorders();
+            
            }
             
             return (
@@ -66,10 +67,7 @@ function Userpastorder() {
                                              </tr>
                                 
                                             ) 
-                                            
                                         }
-                                        
-                                       
                                     </tbody>
                                 </table>
                             </div>

@@ -32,7 +32,6 @@ function App() {
             <Route path="/login" component={LoginComponent} />
             <Route path="/register" component={Register} />
             <Route path="/updatedetails" component={updatedetails} />
-           
             <Route exact path="/products" component={ProductList} />
             <Route exact path="/checkout" component={Checkout} />
             

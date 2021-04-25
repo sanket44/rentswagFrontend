@@ -3,12 +3,7 @@ import ApiService from '../Service/ApiService';
 function Orders() {
   const[orders,updateorders]=useState([]);
   useEffect(function effectFunction(){
-    async function fetorders(){
-      const response=await ApiService.GetallOrders();
-      const orders=await response.data;
-      updateorders(orders);
-    }
-    fetorders();
+    fetchorders();
   },[]);
 
   async  function  cancleorder(o){
@@ -16,24 +11,19 @@ function Orders() {
        await ApiService.updatestatus(id,2).then(
               alert("Order Cancled")
         )
-        async function fetorders(){
-          const response=await ApiService.GetallOrders();
-          const orders=await response.data;
-          updateorders(orders);
-        }
-        fetorders();
+        fetchorders();
    }
+   async function fetchorders(){
+    const response=await ApiService.GetallOrders();
+    const orders=await response.data;
+    updateorders(orders);
+  }
    async  function delivered(o){
     var id=o.id;
      await ApiService.updatestatus(id,1).then(
             alert("status updated to delivered"),
           )
-          async function fetorders(){
-            const response=await ApiService.GetallOrders();
-            const orders=await response.data;
-            updateorders(orders);
-          }
-          fetorders();
+          fetchorders(); 
    }
 
    return (

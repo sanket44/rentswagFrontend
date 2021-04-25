@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Nav } from 'react-bootstrap';
 
 class Cart extends Component {
 constructor(props) {
@@ -23,14 +24,13 @@ removeFromCart=(p)=>{
         cartItems:cartItems.filter((x)=>x.code !== p.code),
     });
     localStorage.setItem("cartItems",JSON.stringify(cartItems.filter((x)=>x.code !== p.code)));
-    window.location.reload()
 };
 
 async getuserinfo(){
 
     let username=localStorage.getItem("username")
 
-    axios.get("https://rentswag.herokuapp.com/users/fetchbyusername/"+username).then(
+   await axios.get("https://rentswag.herokuapp.com/users/fetchbyusername/"+username).then(
         res =>{
             localStorage.setItem("userinfo",JSON.stringify(res.data))
         }
@@ -115,6 +115,7 @@ var rentdate=d.toISOString().split('T')[0];
         );
         // const count= JSON.parse(localStorage.getItem('cartItems'))
         const count= this.state.cartItems.slice();
+
         //const count1=count.reduce((a,c)=>(a+c.price*c.count),0)
         const days=count.reduce((a,c)=>(a+c.price*c.count*( this.getDifferenceInDays(new Date(c.orderFrom),new Date(c.orderTo)))),0)
 
@@ -123,6 +124,7 @@ var rentdate=d.toISOString().split('T')[0];
         
      return (
       <div>
+          <Nav cart={count.length}/>
           <div className="container mb-4">
     <div className="row">
         <div className="col-12">
@@ -168,7 +170,10 @@ var rentdate=d.toISOString().split('T')[0];
                     
                 </div>
                 <div className="col-sm-12 col-md-6 text-right">
-                <Link to="/checkout" className="btn btn-lg btn-block btn-success">Checkout</Link>
+                {/* <Link to="/checkout" className="btn btn-lg btn-block btn-success">Checkout</Link> */}
+                {
+                    days===0 ? null : <Link to="/checkout" className="btn btn-lg btn-block btn-success">Checkout</Link>
+                }
                    
                 </div>
             </div>
