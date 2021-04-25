@@ -24,6 +24,7 @@ removeFromCart=(p)=>{
         cartItems:cartItems.filter((x)=>x.code !== p.code),
     });
     localStorage.setItem("cartItems",JSON.stringify(cartItems.filter((x)=>x.code !== p.code)));
+    window.location.reload()
 };
 
 async getuserinfo(){

@@ -6,12 +6,32 @@ function Orders() {
     fetchorders();
   },[]);
 
-  async  function  cancleorder(o){
+  // async  function  cancleorder(o){
+  //   var id=o.id;
+  //   const temporders1=orders.slice();
+  //   var index1=0;
+  //      await ApiService.updatestatus(id,2).then(
+  //             alert("Order Cancled"),
+  //             index1=orders.findIndex(obj => {
+  //               return obj.id === id
+  //             }),
+  //             temporders1[index1].status=0,
+  //             updateorders(temporders1)
+
+  //       )
+  //  }
+  async  function cancleorder(o){
     var id=o.id;
-       await ApiService.updatestatus(id,2).then(
-              alert("Order Cancled")
-        )
-        fetchorders();
+    const temporders=orders.slice();
+    var index=0;
+     await ApiService.updatestatus(id,1).then(
+            alert("Order Cancled"),
+            index=orders.findIndex(obj => {
+              return obj.id === id
+            }),
+            temporders[index].status=2,
+            updateorders(temporders)
+          )
    }
    async function fetchorders(){
     const response=await ApiService.GetallOrders();
@@ -20,10 +40,16 @@ function Orders() {
   }
    async  function delivered(o){
     var id=o.id;
+    const temporders=orders.slice();
+    var index=0;
      await ApiService.updatestatus(id,1).then(
             alert("status updated to delivered"),
+            index=orders.findIndex(obj => {
+              return obj.id === id
+            }),
+            temporders[index].status=1,
+            updateorders(temporders)
           )
-          fetchorders(); 
    }
 
    return (

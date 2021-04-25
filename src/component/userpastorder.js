@@ -12,20 +12,33 @@ function Userpastorder() {
              }
             fetchorders();
         },[]);
-      async  function  cancleorder(o){
-            var id=o.id;
-               await ApiService.updatestatus(id,2).then(
-                      alert("Order Cancled")
-                )
-                var username=localStorage.getItem("username");
-                async function fetchorders(){
-                    const response=await ApiService.fetchUsers(username);
-                    const orders=await response.data.order
-                    updatepastorders(orders);
-                }
-                fetchorders();
+    //   async  function  cancleorder(o){
+    //         var id=o.id;
+    //            await ApiService.updatestatus(id,2).then(
+    //                   alert("Order Cancled")
+    //             )
+    //             var username=localStorage.getItem("username");
+    //             async function fetchorders(){
+    //                 const response=await ApiService.fetchUsers(username);
+    //                 const orders=await response.data.order
+    //                 updatepastorders(orders);
+    //             }
+    //             fetchorders();
             
-           }
+    //        }
+    async  function cancleorder(o){
+        var id=o.id;
+        const temporders=pastorders.slice();
+        var index=0;
+         await ApiService.updatestatus(id,1).then(
+                alert("Order Cancled"),
+                index=pastorders.findIndex(obj => {
+                  return obj.id === id
+                }),
+                temporders[index].status=2,
+                updatepastorders(temporders)
+              )
+       }
             
             return (
                             <div>
