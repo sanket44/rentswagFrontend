@@ -47,7 +47,7 @@ class ApiService {
 //         return axios.get("https:rentswag.herokuapp.com/users/changestatus/"+id+"/"+status,this.config);
 //     }
     async updatestatus(id,status) {
-        return axios.get("https:rentswag.herokuapp.com/users/changestatus/"+id+"/"+status,this.config);
+        return axios.post("https:rentswag.herokuapp.com/users/changestatus/"+id+"/"+status,this.config);
     }
 
     forgetpassword(email) {
