@@ -43,7 +43,10 @@ class ApiService {
         return axios.post("https://rentswag.herokuapp.com/users/updateDetails",user);
     }
      
-   async updatestatus(id,status) {
+//    async updatestatus(id,status) {
+//         return axios.get("https:rentswag.herokuapp.com/users/changestatus/"+id+"/"+status,this.config);
+//     }
+    async updatestatus(id,status) {
         return axios.get("https:rentswag.herokuapp.com/users/changestatus/"+id+"/"+status,this.config);
     }
 
