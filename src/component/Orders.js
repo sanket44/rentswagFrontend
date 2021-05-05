@@ -24,7 +24,7 @@ function Orders() {
     var id=o.id;
     const temporders=orders.slice();
     var index=0;
-     await ApiService.updatestatus(id,1).then(
+     await ApiService.updatestatus(id,2).then(
             alert("Order Cancled"),
             index=orders.findIndex(obj => {
               return obj.id === id

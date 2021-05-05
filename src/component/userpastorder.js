@@ -30,7 +30,7 @@ function Userpastorder() {
         var id=o.id;
         const temporders=pastorders.slice();
         var index=0;
-         await ApiService.updatestatus(id,1).then(
+         await ApiService.updatestatus(id,2).then(
                 alert("Order Cancled"),
                 index=pastorders.findIndex(obj => {
                   return obj.id === id

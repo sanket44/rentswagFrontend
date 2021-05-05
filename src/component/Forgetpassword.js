@@ -27,7 +27,7 @@ class Forgetpassword extends Component {
         var email=this.state.email
         ApiService.forgetpassword(email).then
         (
-                
+                    
                     alert("Token is been Sent to Your Email"),
                     this.props.history.push('/resetpassword')
                 
