@@ -26,9 +26,10 @@ class Register extends Component {
                 this.props.history.push('/login');
                
             }).catch(
-                res=>{
+                 (error)=>{
                     this.setState({
-                        msg:res.message
+                        msg:error.response.data
+                       
                     })
                 }
             )
@@ -40,7 +41,7 @@ class Register extends Component {
     render() {
         return (
             <div>
-                          {this.state.msg &&  <div className="alert alert-danger">UserName or email already been used Or You submitted Empty Boxes</div>}
+                          {this.state.msg &&  <div className="alert alert-danger">{this.state.msg}</div>}
                         <form>
                             <h1 className="h3 mb-3 fw-normal">Please Register</h1>
                             <input type="username"  className="form-control" name="username" placeholder="User Name" value={this.state.username}  onChange={this.onChange} required />
